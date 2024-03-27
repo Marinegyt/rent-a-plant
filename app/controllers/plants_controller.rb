@@ -4,13 +4,17 @@ class PlantsController < ApplicationController
     @user = User.all
   end
 
+  def show
+    @plant = Plant.find(params[:id])
+  end
+
   def new
     @plant = Plant.new
   end
 
   def create
     @plant = Plant.new(plant_params)
-    @plant.user = curent_user
+    @plant.user = current_user
     if @plant.save
       redirect_to plant_path(@plant)
     else
@@ -21,6 +25,6 @@ class PlantsController < ApplicationController
   private
 
   def plant_params
-    params.require(:plant).permit(:name, :desciption, :photo)
+    params.require(:plant).permit(:name, :description, :price, :photo)
   end
 end

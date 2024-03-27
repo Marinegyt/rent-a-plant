@@ -1,0 +1,7 @@
+<div class="container">
+  <%= cl_image_tag @plant.photo.key, height: 300, width: 400, crop: :fill %>
+
+  <h2><%= @plant.name %></h2>
+  <p><%= @plant.description %></p>
+  <p><%= @plant.price %> €</p>
+</div>

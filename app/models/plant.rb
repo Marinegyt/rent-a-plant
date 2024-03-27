@@ -4,5 +4,5 @@ class Plant < ApplicationRecord
   has_many :bookings, dependent: :destroy
   has_one_attached :photo
 
-  validates :name, :desciption, presence: true
+  validates :name, :description, :price, presence: true
 end
