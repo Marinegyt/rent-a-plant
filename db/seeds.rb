@@ -13,7 +13,7 @@ puts "delete bookings"
 Booking.destroy_all
 puts "finish"
 puts "delete plants"
-Plant.destoy_all
+Plant.destroy_all
 puts "finish"
 puts "delete users"
 User.destroy_all
