@@ -1,11 +1,12 @@
 class PlantsController < ApplicationController
+  before_action :set_plant, only: %i[show edit update destroy]
+
   def index
     @plants = Plant.all
     @user = User.all
   end
 
   def show
-    @plant = Plant.find(params[:id])
   end
 
   def new
@@ -22,7 +23,27 @@ class PlantsController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    if @plant.update(plant_params)
+      redirect_to @plant
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    @plant.destroy
+    redirect_to root_path
+  end
+
   private
+
+  def set_plant
+    @plant = Plant.find(params[:id])
+  end
 
   def plant_params
     params.require(:plant).permit(:name, :description, :price, :photo)

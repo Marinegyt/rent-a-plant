@@ -24,3 +24,9 @@ puts "create users"
 @user_perrine = User.create!(first_name: "Perrine", last_name: "Guerrapin", address: "2 Rue de la Mabilais, 35000 Rennes", email: "perrine.guerrapin@gmail.com", password: "123456")
 @user_cedric = User.create!(first_name: "Cédric", last_name: "Mingam", address: "6 Rue des Portes Mordelaises, 35000 Rennes", email: "truc1@truc.com", password: "123456")
 puts "finish"
+
+puts "create plants"
+@plant1 = Plant.new(user: @user_cedric, name: "Pansy", description: "Superbes fleurs", price: 5)
+file = URI.open('https://res.cloudinary.com/dkm0qrvny/image/upload/v1711559353/pansies-in-pots-crop_0_eu391j.jpg')
+@plant1.photo.attach(io: file, filename: 'elegant.jpg', content_type: 'image/jpg')
+@plant1.save!

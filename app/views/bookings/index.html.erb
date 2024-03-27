@@ -1,0 +1,14 @@
+<div class="container">
+  <% @bookings.each do |booking| %>
+    <%= link_to booking_path(booking) do%>
+      <div class="card-booking">
+        <% plant = booking.plant %>
+        <%= cl_image_tag plant.photo.key, class:"card-img-top" %>
+        <div class="card-booking-infos">
+          <p> Date de début : <%= booking.start_date %></p>
+          <p> Date de fin : <%= booking.end_date %></p>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>

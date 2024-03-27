@@ -1,0 +1,7 @@
+  <%= simple_form_for @plant do |f| %>
+    <%= f.input :name %>
+    <%= f.input :description %>
+    <%= f.input :price, as: :float %>
+    <%= f.input :photo, as: :file %>
+    <%= f.button :submit %>
+  <% end %>
