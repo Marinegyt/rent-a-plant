@@ -6,8 +6,9 @@
       <div class="card-plant-infos">
         <div>
           <h2><%= plant.name %></h2>
-          <p><%= plant.price %> €</p>
+          <p>Rent by <%= plant.user.first_name %></p>
         </div>
+        <h2 class="card-plant-pricing"><%= plant.price %> €</h2>
       </div>
     </div>
     <% end %>
