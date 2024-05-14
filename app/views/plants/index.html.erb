@@ -1,7 +1,4 @@
-<h1>Rent a plant</h1>
-<% @plants.each do |plant| %>
-  <%= cl_image_tag plant.photo.key, height: 300, width: 400, crop: :fill %>
-  <%= link_to plant.name, plant_path(plant.id)%>
-  <%= plant.price %>
-
-<% end %>
+<div class="container mt-5">
+  <h1>Rent a plant</h1>
+  <%= render 'shared/card_info' %>
+</div>

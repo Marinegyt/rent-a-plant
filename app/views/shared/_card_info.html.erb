@@ -1,0 +1,15 @@
+<div class="cards">
+  <% @plants.each do |plant| %>
+      <%= link_to plant_path(plant.id), class:"nav-link" do %>
+    <div class="card-plant m-3">
+      <%= cl_image_tag plant.photo.key %>
+      <div class="card-plant-infos">
+        <div>
+          <h2><%= plant.name %></h2>
+          <p><%= plant.price %> €</p>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  <% end %>
+</div>
