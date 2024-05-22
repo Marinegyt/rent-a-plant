@@ -23,6 +23,10 @@ class PlantsController < ApplicationController
     end
   end
 
+  def my_plants
+    @my_plants = current_user.plants
+  end
+
   def edit
   end
 
